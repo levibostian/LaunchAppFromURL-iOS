@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					F78F2A3D1C6D0C490084DA0B = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 552H65R858;
 					};
 				};
 			};
@@ -247,6 +248,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "LaunchAppFromURL-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.curiosityio.LaunchAppFromURL-iOS";
@@ -258,6 +260,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "LaunchAppFromURL-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.curiosityio.LaunchAppFromURL-iOS";
