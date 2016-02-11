@@ -5,7 +5,13 @@ When someone clicks on a URL, you want your app to open and not the browser. Thi
 
 Some background info on iOS. On Android, when a user opens up a link to your website such as http://curiosityio.com/about?foo=bar your app can open. With iOS, this is not the case. You must use custom schemes in iOS to launch your app such as: curiosityio://about?foo=bar (notice how this custom scheme is equivalent to the http link above. You can still make your custom scheme include fancy queries).
 
-Now, you might be wondering "Why does the YouTube app open when I open a YouTube link on my iPhone?" YouTube is a special exception. Apple will open up the app store, sms, youtube for http/https links. You can view the [full list](https://developer.apple.com/library/ios/featuredarticles/iPhoneURLScheme_Reference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007899) of schemes that Apple has created specifically to open. Your app is not on this list so you must use custom schemes. 
+Now, you might be wondering "Why does the YouTube app open when I open a YouTube link on my iPhone?" YouTube is a special exception. Apple will open up the app store, sms, youtube for http/https links. You can view the [full list](https://developer.apple.com/library/ios/featuredarticles/iPhoneURLScheme_Reference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007899) of schemes that Apple has created specifically to open. Your app is not on this list so you must use custom schemes.
+
+So if you want your app to launch instead of a website, you cannot. Either your website launches using http://,https:// *or* your app launches with yourscheme://. So if you want for example to launch your app from an email on your phone this is the recommendation. Have the email link to a web page on your website (so use http://, https//). Do this because if your user clicks on a link with a custom scheme and an app is not available for that, your phone browser opens and displays an dull message about how it cannot find the page or whatever. Not ideal for UI/UX reasons. Anyway, launch your web page. Then inside of your web page have a button that says tells user to "Open App" or something where the button is <a href="customscheme://whatever?foo=bar">Open App</a> launching your app and then also link to the app store link if they don't have it installed.
+
+You can also use [Smart App Banners](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html) in your app with one line of code:
+`<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
+` to show a button on the top of your web page asking them to launch your app or install it. This is a built-in iOS thing. 
 
 How to get it working:  
 
